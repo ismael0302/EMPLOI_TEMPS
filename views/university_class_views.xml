@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_university_class_form" model="ir.ui.view">
+        <field name="name">university.class.form</field>
+        <field name="model">university.class</field>
+        <field name="arch" type="xml">
+            <form string="Classe Universitaire">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="niveau"/>
+                        <field name="effectif"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_university_class_tree" model="ir.ui.view">
+        <field name="name">university.class.tree</field>
+        <field name="model">university.class</field>
+        <field name="arch" type="xml">
+            <tree string="Liste des Classes">
+                <field name="name"/>
+                <field name="niveau"/>
+                <field name="effectif"/>
+            </tree>
+        </field>
+    </record>
+
+    
+    <record id="university_class_action" model="ir.actions.act_window">
+        <field name="name">Classes Universitaires</field>
+        <field name="res_model">university.class</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="university_menu_root" name="Université"/>
+    <menuitem id="university_class_menu" name="Classes" parent="university_menu_root" action="university_class_action"/>
+
+</odoo>
